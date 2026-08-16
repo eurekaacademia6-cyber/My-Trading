@@ -32,37 +32,31 @@ jobs:
           yes | sdkmanager --licenses || true
           sdkmanager \
             "platform-tools" \
-            "platforms;android-35" \
-            "build-tools;35.0.0"
+            "platforms;android-36" \
+            "build-tools;36.0.0"
 
       - name: Set up Gradle 8.13
         uses: gradle/actions/setup-gradle@v6
         with:
           gradle-version: '8.13'
 
-      - name: Check Java version
+      - name: Check Java
         run: java -version
 
-      - name: Check Gradle version
+      - name: Check Gradle
         run: gradle --version
 
-      - name: Check project files
+      - name: Check Android SDK
         run: |
-          echo "Repository:"
-          ls -la
-          echo ""
-          echo "App directory:"
-          ls -la app
-          echo ""
-          echo "Build files:"
-          ls -la build.gradle settings.gradle gradle.properties
+          sdkmanager --list_installed
+          echo "ANDROID_HOME=$ANDROID_HOME"
 
       - name: Build debug APK
-        run: gradle assembleDebug --stacktrace
+        run: gradle clean assembleDebug --stacktrace
 
       - name: Find APK
         run: |
-          echo "APK files found:"
+          echo "APK files:"
           find app/build/outputs/apk -type f -name "*.apk" -print
 
       - name: Upload APK
