@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="@color/bg">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical">
+        <TextView android:id="@+id/title" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="FOREX CHART EXPERT ULTIMATE" android:textColor="@color/text" android:textStyle="bold" android:textSize="18sp"/>
+        <TextView android:id="@+id/status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFFLINE" android:textColor="@color/amber" android:textStyle="bold" android:textSize="11sp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="8dp">
+        <EditText android:id="@+id/host" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:hint="Bridge URL e.g. http://192.168.1.10:8765" android:text="http://192.168.1.10:8765" android:textColor="@color/text" android:textColorHint="@color/muted" android:singleLine="true" android:inputType="textUri"/>
+        <Button android:id="@+id/connect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CONNECT"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <EditText android:id="@+id/pair" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="EURUSD" android:text="EURUSD" android:textColor="@color/text" android:textColorHint="@color/muted" android:singleLine="true"/>
+        <Spinner android:id="@+id/tf" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+    </LinearLayout>
+    <CheckBox android:id="@+id/newsFilter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="STRICT HIGH-IMPACT NEWS FILTER (requires news_events.csv)" android:textColor="@color/text" android:textSize="11sp" android:checked="false"/>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="210dp" android:layout_marginTop="8dp">
+        <androidx.camera.view.PreviewView android:id="@+id/preview" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <com.forexchartexpert.pro.ui.ScanOverlayView android:id="@+id/overlay" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </FrameLayout>
+
+    <TextView android:id="@+id/dataSource" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DATA: — | MT5 is numerical source of truth | Camera verifies chart" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="6dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="3" android:layout_marginTop="5dp">
+        <TextView android:id="@+id/symbol" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="PAIR —" android:textColor="@color/text" android:textSize="13sp"/>
+        <TextView android:id="@+id/timeframe" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="TF —" android:textColor="@color/text" android:textSize="13sp"/>
+        <TextView android:id="@+id/spread" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="right" android:text="SPREAD —" android:textColor="@color/text" android:textSize="13sp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp" android:background="@color/panel" android:layout_marginTop="8dp">
+        <TextView android:id="@+id/action" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="NO TRADE" android:textColor="@color/amber" android:textStyle="bold" android:textSize="30sp"/>
+        <TextView android:id="@+id/confidence" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="Confidence —" android:textColor="@color/text" android:textSize="14sp" android:layout_marginTop="3dp"/>
+        <TextView android:id="@+id/reason" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="Connect the MT5 bridge to start live analysis." android:textColor="@color/muted" android:textSize="13sp" android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="4" android:layout_marginTop="8dp">
+        <TextView android:id="@+id/trend" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Trend —" android:textColor="@color/text" android:textSize="11sp"/>
+        <TextView android:id="@+id/structure" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Structure —" android:textColor="@color/text" android:textSize="11sp"/>
+        <TextView android:id="@+id/momentum" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Momentum —" android:textColor="@color/text" android:textSize="11sp"/>
+        <TextView android:id="@+id/location" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Location —" android:textColor="@color/text" android:textSize="11sp"/>
+    </LinearLayout>
+    <TextView android:id="@+id/risk" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Risk: —" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="7dp" android:paddingBottom="5dp"/>
+</LinearLayout>
+</ScrollView>

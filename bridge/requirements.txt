@@ -1,0 +1,4 @@
+MetaTrader5>=5.0.29
+numpy>=2.2
+scikit-learn>=1.6
+joblib>=1.4
